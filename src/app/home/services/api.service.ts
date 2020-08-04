@@ -9,11 +9,11 @@ import { Rockets } from '../models/rockets';
 export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
-  listAllRockets() {
-    return this.httpClient.get<any[]>('https://api.spacexdata.com/v4/launches/');
+  listAllRockets(): Observable<Rockets[]> {
+    return this.httpClient.get<Rockets[]>('https://api.spacexdata.com/v4/launches/');
   }
 
-  latestRocket() {
-    return this.httpClient.get<any>('https://api.spacexdata.com/v4/launches/latest');
+  latestRocket(): Observable<Rockets> {
+    return this.httpClient.get<Rockets>('https://api.spacexdata.com/v4/launches/latest');
   }
 }
