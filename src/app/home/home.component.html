@@ -6,24 +6,52 @@
     </nav>
   </header>
   <div class="shadowContainer">
-    <img src="../../assets/background.png" alt="background_png" />
+    <img src="{{lastestRocket.links.flickr.original[1]}}" alt="background_png" />
     <div></div>
   </div>
   <main>
     <div class="introductionContainer">
       <div class="introductionContent">
         <h2>ULTIMO FOGUETE LANÇADO:</h2>
-        <h1>ANASIS-II</h1>
+        <h1>{{lastestRocket.name}}</h1>
         <span>
           Status:
-          <img src="../../assets/icons/success.svg" alt="success_icon" />
-          <!-- <img src="../../assets/icons/xCross.svg" alt="xCross_icon" /> -->
+          <img *ngIf="lastestRocket.success" src="../../assets/icons/success.svg" alt="success_icon" />
+          <img *ngIf="!lastestRocket.success" src="../../assets/icons/xCross.svg" alt="xCross_icon" />
         </span>
       </div>
       <button>Link da decolagem</button>
     </div>
     <div class="launchesContainer">
       <h1>Lançamentos</h1>
+      <div class="rocketsTable">
+        <table>
+          <tr>
+            <th>Nome</th>
+            <th>Data de Lançamento</th>
+            <th>Status</th>
+          </tr>
+          <tr *ngFor="let rocket of rockets">
+            <td>{{rocket.name}}</td>
+            <td *ngIf="rocket.static_fire_date_utc !== 'Não registrado'">{{rocket.static_fire_date_utc | date:'dd/MM/yyyy'}}</td>
+            <td *ngIf="rocket.static_fire_date_utc === 'Não registrado'">{{rocket.static_fire_date_utc}}</td>
+            <td>
+              <a href="{{rocket.links.webcast}}">
+                <div *ngIf="rocket.success && !!!rocket.failures[0]" class="success">
+                  Sucesso
+                </div>
+                <div *ngIf="!rocket.success && !!rocket.failures[0]" class="failure">
+                  Fracasso
+                </div>
+                <div *ngIf="!rocket.success && !!!rocket.failures[0]" class="coming_soon">
+                  Em breve
+                </div>
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
   </main>
 </div>
+<!-- <h1 *ngFor="let rocket of rockets">{{rocket.links.webcast}}</h1> -->
