@@ -10,6 +10,7 @@
     flex-direction: column
     align-items: center
 
+
   header
     position: relative
     display: flex
@@ -56,6 +57,7 @@
 
 main
   position: absolute
+  width: calc(100% - 160px)
 
   @media only screen and (max-width: 450px)
     padding: 0 48px
@@ -102,11 +104,71 @@ main
   height: 100vh
 
 .launchesContainer
-  background-color: #000
   display: flex
   align-items: center
-  justify-content: center
+  flex-direction: column
   width: 100%
 
   h1
     font-size: 32px
+
+  table
+    border-collapse: collapse
+
+    div
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 32px
+      max-width: 160px
+      width: 100%
+      border-radius: 50px
+
+    th
+      padding: 16px 120px 16px 16px
+
+      @media only screen and (max-width: 800px)
+        padding: 0
+
+      &:first-of-type
+        border-radius: 50px 0 0 50px
+
+      &:last-of-type
+        border-radius: 0 50px 50px 0
+
+    td
+      padding: 8px 16px 8px 16px
+      font-size: 16px
+
+      @media only screen and (max-width: 800px)
+        padding: 0
+
+      &:first-of-type
+        border-radius: 50px 0 0 50px
+
+      &:last-of-type
+        border-radius: 0 50px 50px 0
+
+      a
+        text-decoration: none
+        color: #fff
+
+    tr
+      &:hover
+        background-color: #1D1D1D
+
+
+.success
+  background-color: #00BB1E
+
+.failure
+  background-color: #BB0000
+
+.coming_soon
+  background-color: #1900BB
+
+.rocketsTable
+  margin-top: 64px
+  background-color: #0F0F0F
+  padding: 30px 56px
+  border-radius: 8px
