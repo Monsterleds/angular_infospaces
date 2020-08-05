@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './services/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,15 @@ import { ApiService } from './services/api.service';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
+  public user: string;
   public textButton: string;
   public rockets: any[];
   public lastestRocket: any;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute) {
+    // Pegando os dados direto das rotas, tipo um context api do React.
+    this.route.data.subscribe(userData => this.user = userData.user.email);
+  }
 
   ngOnInit(): void {
     this.textButton = 'Link da decolagem';
