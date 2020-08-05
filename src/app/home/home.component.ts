@@ -7,12 +7,14 @@ import { ApiService } from './services/api.service';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
+  public textButton: string;
   public rockets: any[];
   public lastestRocket: any;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.textButton = 'Link da decolagem';
     this.listAll();
     this.findLatest();
   }
