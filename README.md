@@ -1,27 +1,111 @@
-# SpacexApi
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/56271517/89470927-4fd77880-d753-11ea-9558-150e6fdc33c2.png"> </img>
+</p>
+<br>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
+## Sobre o projeto
+InfoSpaces é um site pessoal desenvolvido por mim com as técnologias do Angular 9, a idéia do projeto consiste em apresentar as informações obtidas de foguetes lançados (ou que irão lançar) pela spaceX, assim conseguindo obter todo o tipo de informações, como nome do foguete, data de lançamento, vídeo e etc.
 
-## Development server
+<br><br>
+![projeto](https://user-images.githubusercontent.com/56271517/89471768-5f57c100-d755-11ea-9138-250763dc2143.png)
+<br><br>
+## Por que?
+Muitas vezes, eu sempre me perguntava quando aconteceria os próximos lançamentos de novos foguetes, ou até mesmo, quais foram lançados e obtiveram sucesso/fracasso, porém, 
+nunca obtive sucesso em encontrar os mesmos, logo, o infoSpaces tem como objetivo sanar essa necessidade e compartilhar as informações necessárias sobre determinado foguete lançado pela spaceX.
+<br><br>
+## Funcionalidades
+- Session
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+     - (Não possui autenticação com o backend, pois o foco era testar a técnologia do angular)
+     
+- Postagens
 
-## Code scaffolding
+     - Cadastrar nova Postagem
+     - Deletar Postagem
+     - Listar Postagens
+     - Visualizar dados da Postagem, como nome da Postagem, descrição e o valor do mesmo
+     
+## Começando
+### Pré requisitos
+Para iniciar o projeto no modo Desenvolvedor, você deve instalar o yarn, npm ou qualquer outro gerenciador de pacotes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Instalando
 
-## Build
+#### Clonando o repositório
+Front-end:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+$ git clone https://github.com/Monsterleds/ifun_ssr_reactjs_nextjs
+```
+<br>
+Back-end:
 
-## Running unit tests
+```
+$ git clone https://github.com/Monsterleds/ifun_backend
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Instalando as dependências do Back-end
+```
+$ cd ifun_backend
+```
 
-## Running end-to-end tests
+```
+$ yarn
+```
+_Ou_
+```
+$ npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### Instalando as dependências do Front-end
+```
+$ cd ifun_ssr_reactjs_nextjs
+```
 
-## Further help
+```
+$ yarn
+```
+_Ou_
+```
+$ npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Conectando ao Server
+Para iniciar, primeiramente você precisa startar o servidor do Back-end, quando estiver na pasta, execute o comando:
+```
+$ yarn dev:server
+```
+_Ou_
+```
+$ npm dev:server
+```
+
+_(lembre-se de ajustar o .env)_
+## Rodando
+#### Web
+```
+$ cd ifun_ssr_reactjs_nextjs
+```
+```
+$ yarn dev
+```
+_Ou_
+```
+$ npm dev
+```
+
+## Construído com: 
+- [Axios](https://github.com/axios/axios) - Cliente HTTP
+- [Jest](https://jestjs.io/) - Testes da aplicação
+- [Express](https://expressjs.com/pt-br/) - Bibliotecas básicas
+- [Redis](https://github.com/redis/redis) - Cache da aplicação
+- [TypeOrm](https://typeorm.io/#/) - Migrations do banco e outras funcionalidades
+- [React-Dropzone](https://github.com/react-dropzone/react-dropzone) - Dropzone das imagens
+- [Yup](https://github.com/jquense/yup) - Validações
+- [Eslint](https://github.com/eslint/eslint) - Padronização de código
+- [Prettier](https://github.com/prettier/prettier) - Padronização de código
+- [React-Spring](https://www.react-spring.io/) - Animações de componentes
+- [Rate-Limiter-Flexible](https://github.com/animir/node-rate-limiter-flexible) - Segurança contra força-bruta
+- [Multer](https://github.com/expressjs/multer) - Formatação da imagem
+- [Crypto](https://nodejs.org/api/crypto.html) - Hash da imagem
+- [Bcrypt](https://github.com/kelektiv/node.bcrypt.js/) - Criptografia da senha
