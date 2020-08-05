@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { AuthenticatedGuard } from './authenticated.guard';
+
 import { HomeComponent } from './home/home.component';
+import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', redirectTo: 'signin', pathMatch: 'full'
+  },
+  {
+    path: 'signin', component: IndexComponent, canActivate: [AuthenticatedGuard]
+  },
+  {
+    path: 'home', component: HomeComponent, canActivate: [AuthenticatedGuard]
   }
 ];
 
@@ -13,3 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

@@ -20,7 +20,7 @@
           <img *ngIf="!lastestRocket.success" src="../../assets/icons/xCross.svg" alt="xCross_icon" />
         </span>
       </div>
-      <button><a href="{{lastestRocket.links.webcast}}">Link da decolagem</a></button>
+      <app-button [textButton]="textButton" [linkButton]="lastestRocket.links.webcast"></app-button>
     </div>
     <div class="launchesContainer">
       <h1>Lançamentos</h1>
@@ -54,4 +54,3 @@
     </div>
   </main>
 </div>
-<!-- <h1 *ngFor="let rocket of rockets">{{rocket.links.webcast}}</h1> -->
