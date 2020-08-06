@@ -56,11 +56,11 @@ $ npm install
 $ cd angular_infospaces
 ```
 ```
-$ yarn dev
+$ yarn start
 ```
 _Ou_
 ```
-$ npm dev
+$ npm start
 ```
 
 ## Construído com: 
