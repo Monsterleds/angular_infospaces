@@ -65,3 +65,4 @@ $ npm start
 
 ## Construído com: 
 - [Angular](https://angular.io/) - Template do projeto, assim vindo libs prontas para requisições, testes, rotas e etc.
+- [Sass](https://sass-lang.com/) - Estilização do site
