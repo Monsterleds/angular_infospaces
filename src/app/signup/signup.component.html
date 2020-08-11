@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <div class="logo">
       <img src="../../assets/icons/rocket.svg" alt="rocket_icon" />
       InfoSpaces
@@ -15,6 +15,11 @@
       <input type="password" formControlName="password" />
     </div>
 
-    <button type="submit">Entrar</button>
+    <div class="inputs">
+      <span>Confirmar Senha</span>
+      <input type="password" formControlName="confirmPassword" />
+    </div>
+
+    <button type="submit">Cadastrar</button>
   </form>
 </div>
