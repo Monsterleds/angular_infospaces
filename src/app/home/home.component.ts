@@ -13,7 +13,10 @@ export class HomeComponent implements OnInit {
   public rockets: any[];
   public lastestRocket: any;
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute) {
+  constructor(
+    private apiService: ApiService,
+    private route: ActivatedRoute
+  ) {
     // Pegando os dados direto das rotas, tipo um context api do React.
     this.route.data.subscribe(userData => this.user = userData.user.email);
   }
@@ -28,6 +31,10 @@ export class HomeComponent implements OnInit {
     this.apiService.listAllRockets().subscribe(res => this.rockets = res.map(rocket => {
       if(!rocket.static_fire_date_utc) {
         rocket.static_fire_date_utc = 'Não registrado'
+      }
+
+      if(!rocket.links) {
+        return '';
       }
 
       return rocket;

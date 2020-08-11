@@ -5,6 +5,7 @@ import { AuthenticatedGuard } from './routes/authenticated.guard';
 
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,9 @@ const routes: Routes = [
   },
   {
     path: 'signin', component: IndexComponent, canActivate: [AuthenticatedGuard]
+  },
+  {
+    path: 'signup', component: SignupComponent, canActivate: [AuthenticatedGuard]
   },
   {
     path: 'home', component: HomeComponent, canActivate: [AuthenticatedGuard], data: { user: JSON.parse(localStorage.getItem('@infospaces/user')), token: JSON.parse(localStorage.getItem('@infospaces/token')) }

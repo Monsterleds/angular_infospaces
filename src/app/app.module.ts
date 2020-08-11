@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ApiService } from './home/services/api.service';
 import { ButtonComponent } from './components/button/button.component';
 import { IndexComponent } from './index/index.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { IndexComponent } from './index/index.component';
     HomeComponent,
     ButtonComponent,
     IndexComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
