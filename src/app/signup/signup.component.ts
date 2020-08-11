@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { SignupService } from './services/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,12 +16,17 @@ export class SignupComponent implements OnInit {
     confirmPassword: new FormControl(),
   })
 
-  constructor() { }
+  constructor(
+    private signupService: SignupService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(this.signupForm.value)
+    this.signupService.createUser(this.signupForm.value).subscribe(res => {
+      this.router.navigate(['/signin']);
+    })
   }
 }

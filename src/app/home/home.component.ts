@@ -33,10 +33,6 @@ export class HomeComponent implements OnInit {
         rocket.static_fire_date_utc = 'Não registrado'
       }
 
-      if(!rocket.links) {
-        return '';
-      }
-
       return rocket;
     }))
   }
