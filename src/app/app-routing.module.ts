@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'signin', component: IndexComponent, canActivate: [AuthenticatedGuard]
   },
   {
-    path: 'home', component: HomeComponent, canActivate: [AuthenticatedGuard], data: { user: JSON.parse(localStorage.getItem('@infospaces/user')) }
+    path: 'home', component: HomeComponent, canActivate: [AuthenticatedGuard], data: { user: JSON.parse(localStorage.getItem('@infospaces/user')), token: JSON.parse(localStorage.getItem('@infospaces/token')) }
   }
 ];
 
