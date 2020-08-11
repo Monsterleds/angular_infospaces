@@ -13,18 +13,19 @@ export class AuthenticatedGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     let isPrivate = false;
     const user = localStorage.getItem('@infospaces/user');
+    const token = localStorage.getItem('@infospaces/token');
 
     if (next.url[0].path !== 'signin') {
       isPrivate = true;
     }
 
-    if (!user && !isPrivate || user && isPrivate) return true;
+    if ((!token || !user) && !isPrivate || (token || user) && isPrivate) return true;
 
-    if(!user && isPrivate) {
+    if((!token || !user) && isPrivate) {
       this.router.navigate(['/signin'])
     }
 
-    if(user && !isPrivate) {
+    if((token || user) && !isPrivate) {
       this.router.navigate(['/home'])
     }
 
