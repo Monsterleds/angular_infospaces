@@ -8,16 +8,21 @@
     <div class="inputs">
       <span>E-mail</span>
       <input type="text" formControlName="email" />
+      <strong *ngIf="emailControl === 'required'">Email é obrigatório</strong>
+      <strong *ngIf="emailControl === 'email'">Email inválido</strong>
     </div>
 
     <div class="inputs">
       <span>Senha</span>
       <input type="password" formControlName="password" />
+      <strong *ngIf="passwordControl === 'required'">Senha é obrigatório</strong>
+      <strong *ngIf="passwordControl === 'minLength'">Minimo 6 caracteres</strong>
     </div>
 
     <div class="inputs">
       <span>Confirmar Senha</span>
       <input type="password" formControlName="confirmPassword" />
+      <strong *ngIf="confirmPasswordControl === true">Senhas não batem</strong>
     </div>
 
     <button type="submit">Cadastrar</button>

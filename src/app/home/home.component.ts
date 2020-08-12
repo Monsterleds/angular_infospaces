@@ -23,8 +23,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.textButton = 'Link da decolagem';
-    this.listAll();
     this.findLatest();
+    this.listAll();
   }
 
   public listAll() {
