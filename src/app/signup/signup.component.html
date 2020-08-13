@@ -12,6 +12,7 @@
       <strong *ngIf="emailControl === 'email'">Email inválido</strong>
     </div>
 
+
     <div class="inputs">
       <span>Senha</span>
       <input type="password" formControlName="password" />
@@ -23,6 +24,16 @@
       <span>Confirmar Senha</span>
       <input type="password" formControlName="confirmPassword" />
       <strong *ngIf="confirmPasswordControl === true">Senhas não batem</strong>
+    </div>
+
+    <div class="linkContainer">
+      <div class="linkContent">
+        <div class="imgContainer">
+          <img src="../../assets/icons/feLogoutBlack.png" alt="fiLogin">
+          <img src="../../assets/icons/feLogout.png" alt="fiLogin">
+        </div>
+        <a routerLink="/signin" routerLinkActive="active">Logar na sua conta</a>
+      </div>
     </div>
 
     <button type="submit">Cadastrar</button>
