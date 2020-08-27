@@ -16,7 +16,7 @@ nunca obtive sucesso em encontrar os mesmos, logo, o infoSpaces tem como objetiv
 ## Funcionalidades
 - Session
 
-     - (Não possui autenticação com o backend, pois o foco era testar a técnologia do angular)
+     - Criar uma sessão
      
 - Foguetes
 
@@ -36,6 +36,11 @@ Front-end:
 ```
 $ git clone https://github.com/Monsterleds/angular_infospaces
 ```
+Back-end:
+
+```
+$ git clone https://github.com/Monsterleds/nest-js-info_spaces
+```
 
 #### Instalando as dependências do Front-end
 ```
@@ -49,11 +54,34 @@ _Ou_
 ```
 $ npm install
 ```
+#### Instalando as dependências do Back-end
+```
+$ cd nest-js-info_spaces
+```
+
+```
+$ yarn
+```
+_Ou_
+```
+$ npm install
+```
 
 ## Rodando
-#### Web
+#### Web - Frontend
 ```
 $ cd angular_infospaces
+```
+```
+$ yarn start
+```
+_Ou_
+```
+$ npm start
+```
+#### Web - Backend
+```
+$ cd nest-js-info_spaces
 ```
 ```
 $ yarn start
